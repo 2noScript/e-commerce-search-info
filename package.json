@@ -9,6 +9,12 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon --exec ts-node src/index.ts",
+    "dev:fptshop": "nodemon --exec ts-node tests/fptshop.test.ts",
+    "dev:lazada": "nodemon --exec ts-node tests/lazada.test.ts",
+    "dev:sendo": "nodemon --exec ts-node tests/sendo.test.ts",
+    "dev:shopee": "nodemon --exec ts-node tests/shopee.test.ts",
+    "dev:tiki": "nodemon --exec ts-node tests/tiki.test.ts",
+    "dev:viettelstore": "nodemon --exec ts-node tests/viettelstore.test.ts",
     "prepare": "yarn  build"
   },
   "license": "MIT",
