@@ -11,10 +11,15 @@ export default class Shopee extends BaseECom {
     await page.click(".shopee-searchbar-input__input");
     await page.keyboard.type(key, { delay: 100 });
     await page.keyboard.press('Enter');
-
-    await this.useSleep(60);
+    await page.waitForSelector(".shopee-search-item-result__item", { timeout: 5000 }); 
+    
   }
   protected async crawler(page: Page): Promise<IResponseListProduct> {
-    throw new Error("Method not implemented.");
+    const products=await page.$$(".shopee-search-item-result__item")
+    console.log(products.length)
+    return {
+      data:[],
+      status:'WITCH_OUT'
+    }
   }
 }
