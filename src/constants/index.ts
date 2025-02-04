@@ -1,7 +1,7 @@
 import { ISourceInfo, Platforms } from "../models/types";
 
-export const PlatformsInfo: ISourceInfo[] = [
-  {
+export const PlatformsInfo: Record<Platforms, ISourceInfo> = {
+  [Platforms.Shopee]: {
     key: Platforms.Shopee,
     name: "shopee",
     language: ["vi"],
@@ -10,7 +10,7 @@ export const PlatformsInfo: ISourceInfo[] = [
     logo: "",
     domain: "shopee.vn",
   },
-  {
+  [Platforms.Lazada]: {
     key: Platforms.Lazada,
     name: "lazada",
     language: ["vi"],
@@ -19,7 +19,7 @@ export const PlatformsInfo: ISourceInfo[] = [
     logo: "",
     domain: "lazada.vn",
   },
-  {
+  [Platforms.Tiki]: {
     key: Platforms.Tiki,
     name: "tiki",
     language: ["vi"],
@@ -28,7 +28,7 @@ export const PlatformsInfo: ISourceInfo[] = [
     logo: "",
     domain: "tiki.vn",
   },
-  {
+  [Platforms.Sendo]: {
     key: Platforms.Sendo,
     name: "sendo",
     language: ["vi"],
@@ -37,7 +37,7 @@ export const PlatformsInfo: ISourceInfo[] = [
     logo: "",
     domain: "sendo.vn",
   },
-  {
+  [Platforms.Fptshop]: {
     key: Platforms.Fptshop,
     name: "fptshop",
     language: ["vi"],
@@ -46,8 +46,7 @@ export const PlatformsInfo: ISourceInfo[] = [
     logo: "",
     domain: "fptshop.com.vn",
   },
-
-  {
+  [Platforms.Viettelstore]: {
     key: Platforms.Viettelstore,
     name: "viettelstore",
     language: ["vi"],
@@ -56,5 +55,4 @@ export const PlatformsInfo: ISourceInfo[] = [
     logo: "",
     domain: "viettelstore.vn",
   },
-  
-];
+};
