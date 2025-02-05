@@ -1,7 +1,7 @@
 import * as PlatformECommerce from "./platforms";
 
 import { Platforms } from "./models/types";
-import { PlatformsInfo } from "./constants";
+import { ECommerceInfo } from "./constants";
 
 class ECommerce {
   private store: Record<Platforms, any>;
@@ -16,7 +16,7 @@ class ECommerce {
     };
   }
   build(platform: Platforms) {
-    return new this.store[platform](PlatformsInfo[platform].domain);
+    return new this.store[platform](ECommerceInfo[platform].domain);
   }
 }
 

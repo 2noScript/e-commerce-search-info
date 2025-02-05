@@ -1,6 +1,6 @@
 import { ISourceInfo, Platforms } from "../models/types";
 
-export const PlatformsInfo: Record<Platforms, ISourceInfo> = {
+export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
   [Platforms.Shopee]: {
     key: Platforms.Shopee,
     name: "shopee",
