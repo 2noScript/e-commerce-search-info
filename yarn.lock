@@ -56,7 +56,7 @@
 
 "@types/speakingurl@^13.0.6":
   version "13.0.6"
-  resolved "https://registry.yarnpkg.com/@types/speakingurl/-/speakingurl-13.0.6.tgz#fb64d905bb802e89facca641ed4ff5ed13854c88"
+  resolved "https://registry.npmjs.org/@types/speakingurl/-/speakingurl-13.0.6.tgz"
   integrity sha512-ywkRHNHBwq0mFs/2HRgW6TEBAzH66G8f2Txzh1aGR0UC9ZoAUHfHxLZGDhwMpck4BpSnB61eNFIFmlV+TJ+KUA==
 
 abbrev@1:
@@ -303,16 +303,6 @@ simple-update-notifier@^2.0.0:
   integrity sha512-a2B9Y0KlNXl9u/vsW6sTIu9vGEpfKu2wRV6l1H3XEas/0gUIzGzBoP/IouTcUQbm9JWZLH3COxyn03TYlFax6w==
   dependencies:
     semver "^7.5.3"
-
-slugify@^1.6.6:
-  version "1.6.6"
-  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.6.tgz#2d4ac0eacb47add6af9e04d3be79319cbcc7924b"
-  integrity sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==
-
-speakingurl@^14.0.1:
-  version "14.0.1"
-  resolved "https://registry.yarnpkg.com/speakingurl/-/speakingurl-14.0.1.tgz#f37ec8ddc4ab98e9600c1c9ec324a8c48d772a53"
-  integrity sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==
 
 supports-color@^5.5.0:
   version "5.5.0"

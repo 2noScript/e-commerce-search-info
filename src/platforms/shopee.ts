@@ -3,8 +3,6 @@ import { BaseECom } from "../models/base";
 import { IResponseListProduct, IProductInfo } from "../models/types";
 import { starFormat} from "../utils";
 import {DELAY_TYPE_KEY} from "../constants"
-import slugify from "slugify"
-import getSlug from "speakingurl";
 
 export default class Shopee extends BaseECom {
 
