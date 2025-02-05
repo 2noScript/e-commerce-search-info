@@ -1,7 +1,7 @@
 import { Page } from "playwright";
 import { BaseECom } from "../models/base";
 import { IResponseListProduct, IProductInfo } from "../models/types";
-import { saveJsonToFile ,starFormat} from "../utils";
+import { starFormat} from "../utils";
 
 export default class Shopee extends BaseECom {
   protected async sendKeyword(page: Page, key: string): Promise<void> {
@@ -60,7 +60,6 @@ export default class Shopee extends BaseECom {
       })
     }
     
-    console.log(data)
     return {
       data,
       status: "SUCCESS",
