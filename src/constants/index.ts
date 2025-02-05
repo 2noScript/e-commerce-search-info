@@ -6,8 +6,8 @@ export const PlatformsInfo: Record<Platforms, ISourceInfo> = {
     name: "shopee",
     language: ["vi"],
     locale: "vi_VN",
-    icon: "",
-    logo: "",
+    icon: "https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/icon_favicon_1_96.wI1aMs.png",
+    logo: "https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/icon_favicon_1_96.wI1aMs.png",
     domain: "shopee.vn",
   },
   [Platforms.Lazada]: {

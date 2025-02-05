@@ -1,6 +1,6 @@
 type TYPE_LANGUAGE = "en" | "vi";
 type TYPE_lOCALE = "en_EN" | "vi_VN";
-type Status = "SUCCESS" | "ERROR" | "WITCH_OUT";
+type Status = "SUCCESS" | "ERROR" | "WITHOUT";
 type Unit="VND"
 
 export enum Platforms {
@@ -18,9 +18,8 @@ export interface IResponseListProduct {
 }
 
 export interface IProductInfo {
-  name: string;
+  title: string;
   price:number,
-  discountPrice?:number
   originPrice?:number
   unit:Unit,
   star?:number,
@@ -29,6 +28,7 @@ export interface IProductInfo {
   imagePathThumbnail?:string,
   location?:string
   favourite?:boolean,
+  like?:number,
   description?:string
 }
 

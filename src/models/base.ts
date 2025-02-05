@@ -4,6 +4,7 @@ import { IResponseListProduct } from "../models/types";
 export abstract class BaseECom {
   protected baseUrl: string;
   protected LIMIT_ITEMS: number = 30;
+  protected store:Record<string,any>={}
 
   constructor(domain: string) {
     this.baseUrl = `https://${domain}`;
@@ -12,8 +13,22 @@ export abstract class BaseECom {
   protected useSleep(s: number) {
     return new Promise((resolve) => setTimeout(resolve, s * 1000));
   }
-  
-  protected abstract  sendKeyword(page: Page, key: string): Promise<void>;
+
+  protected async useScroll(page: Page, limit?: number) {
+    let previousHeight = await page.evaluate(() => document.body.scrollHeight);
+    let curCount = 0;
+    while (true) {
+      await page.mouse.wheel(0, 1000);
+      await page.waitForTimeout(400);
+      let newHeight = await page.evaluate(() => document.body.scrollHeight);
+      if (newHeight === previousHeight) break;
+      if (limit && curCount === limit) break;
+      previousHeight = newHeight;
+      curCount++;
+    }
+  }
+
+  protected abstract sendKeyword(page: Page, key: string): Promise<void>;
   protected abstract crawler(page: Page): Promise<IResponseListProduct>;
 
   async search(page: Page, key: string): Promise<IResponseListProduct> {
