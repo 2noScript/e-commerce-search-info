@@ -2,8 +2,18 @@ import { Page } from "playwright";
 import { BaseECom } from "../models/base";
 import { IResponseListProduct, IProductInfo } from "../models/types";
 import { starFormat} from "../utils";
+import {DELAY_TYPE_KEY} from "../constants"
+import slugify from "slugify"
+import getSlug from "speakingurl";
 
 export default class Shopee extends BaseECom {
+
+  private slugStr(text:string){
+    return text
+    .trim()
+    .replace(/\s+/g, "-") 
+    .replace(/[^\w\u00C0-\u1EF9-]+/g, ""); 
+  }
   protected async sendKeyword(page: Page, key: string): Promise<void> {
     page.on("response", async (response) => {
       if (
@@ -14,7 +24,6 @@ export default class Shopee extends BaseECom {
             response.headers()["content-type"]?.includes("application/json")
           ) {
             const json = await response.json();
-            console.log("JSON Response:", json.items.length);
             this.store["products"] = json.items;
           }
         } catch (error) {
@@ -23,9 +32,10 @@ export default class Shopee extends BaseECom {
       }
     });
     await page.goto(this.baseUrl, { waitUntil: "networkidle" });
+    await this.useSleep(2)
     await page.reload({ waitUntil: "networkidle" });
     await page.click(".shopee-searchbar-input__input");
-    await page.keyboard.type(key, { delay: 100 });
+    await page.keyboard.type(key, { delay: DELAY_TYPE_KEY });
     await page.keyboard.press("Enter");
   }
 
@@ -46,6 +56,7 @@ export default class Shopee extends BaseECom {
       const imageUrlThumbnail=`https://down-vn.img.susercontent.com/file/${prod.item_basic.image}`
       const location=prod.item_basic.shop_location
       const like=prod.item_basic.liked_count
+      const detailUrl=`${this.baseUrl}/${this.slugStr(title)}-i.${prod.item_basic.shopid}.${prod.item_basic.itemid}`
 
       data.push({
         title,
@@ -56,7 +67,8 @@ export default class Shopee extends BaseECom {
         star,
         imageUrlThumbnail,
         location,
-        like
+        like,
+        detailUrl
       })
     }
     

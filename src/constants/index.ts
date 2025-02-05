@@ -56,3 +56,5 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
     domain: "viettelstore.vn",
   },
 };
+
+export const DELAY_TYPE_KEY=100

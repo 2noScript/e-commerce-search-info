@@ -26,6 +26,7 @@ export interface IProductInfo {
   discount?:number,
   imageUrlThumbnail:string,
   imagePathThumbnail?:string,
+  detailUrl:string,
   location?:string
   favourite?:boolean,
   like?:number,
