@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon --exec ts-node src/index.ts",
+    "dev": "nodemon --exec ts-node tests/index.ts",
     "dev:fptshop": "nodemon --exec ts-node tests/fptshop.test.ts",
     "dev:lazada": "nodemon --exec ts-node tests/lazada.test.ts",
     "dev:sendo": "nodemon --exec ts-node tests/sendo.test.ts",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/node": "^22.13.1",
     "@types/speakingurl": "^13.0.6",
+    "axios": "^1.7.9",
     "nodemon": "^3.0.3",
     "playwright": "^1.50.1",
     "ts-node": "^10.9.2",

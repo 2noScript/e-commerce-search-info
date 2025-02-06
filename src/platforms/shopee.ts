@@ -2,7 +2,8 @@ import { Page } from "playwright";
 import { BaseECom } from "../models/base";
 import { IResponseListProduct, IProductInfo } from "../models/types";
 import { starFormat} from "../utils";
-import {DELAY_TYPE_KEY} from "../constants"
+import c from "../../mock/shopee.vn_06-02-2025.json"
+
 
 export default class Shopee extends BaseECom {
 
@@ -23,26 +24,26 @@ export default class Shopee extends BaseECom {
           ) {
             const json = await response.json();
             this.store["products"] = json.items;
+            this.store["prodNew"]=true
           }
         } catch (error) {
           console.error("Error parsing response:", error);
         }
       }
     });
-    await page.goto(this.baseUrl, { waitUntil: "networkidle" });
-    await this.useSleep(2)
-    await page.reload({ waitUntil: "networkidle" });
-    await page.click(".shopee-searchbar-input__input");
-    await page.keyboard.type(key, { delay: DELAY_TYPE_KEY });
-    await page.keyboard.press("Enter");
+
+    const context = page.context();
+    context.addCookies(c as any)
+    await page.goto(`${this.baseUrl}/search?keyword=${key}`)
+
   }
 
   protected async crawler(page: Page): Promise<IResponseListProduct> {
     const data: IProductInfo[] = [];
 
-    await this.useScroll(page);
+    // await this.useScroll(page);
     await page.waitForLoadState("networkidle");
-    await this.useSleep(2)
+    await this.useCheck()
 
     for (const prod of this.store?.products ?? []) {
       const title = prod.item_basic.name;
