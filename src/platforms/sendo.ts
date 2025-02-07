@@ -9,7 +9,7 @@ export default class Sendo extends BaseECom{
     protected sendKeyword(page: Page, key: string): Promise<void> {
         throw new Error("Method not implemented.");
     }
-    protected crawler(page: Page): Promise<IResponseListProduct> {
+    protected crawler(): Promise<IResponseListProduct> {
         throw new Error("Method not implemented.");
     }
     

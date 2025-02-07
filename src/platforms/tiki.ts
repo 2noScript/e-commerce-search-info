@@ -1,7 +1,6 @@
 import { Page } from "playwright";
 import { BaseECom } from "../models/base";
 import { IProductInfo, IResponseListProduct } from "../models/types";
-import { DELAY_TYPE_KEY } from "../constants";
 
 export default class Tiki extends BaseECom {
   protected async sendKeyword(page: Page, key: string): Promise<void> {
@@ -9,11 +8,11 @@ export default class Tiki extends BaseECom {
     await context.grantPermissions([]);
 
     page.on("response", async (response) => {
-      if (response.url().includes("https://tiki.vn/api/v2/products")) {
+      if (response.url().includes(`${this.baseUrl}/api/v2/products`)) {
         try {
           const url = response.url();
           if (
-            url.startsWith("https://tiki.vn/api/v2/products") &&
+            url.startsWith(`${this.baseUrl}/api/v2/products`) &&
             url.includes("include=advertisement") &&
             url.includes("aggregations=") &&
             url.includes("trackity_id")
@@ -26,6 +25,7 @@ export default class Tiki extends BaseECom {
                 ...this.store["products"],
                 ...json.data,
               ];
+              this.store["prodNew"]=true
               console.log(this.store["products"].length);
             }
           }
@@ -34,17 +34,14 @@ export default class Tiki extends BaseECom {
         }
       }
     });
-    await page.goto(this.baseUrl, { waitUntil: "domcontentloaded" });
-    await this.useSleep(2);
-    await page.mouse.click(0, 0);
-
-    await page.click('input[data-view-id="main_search_form_input"]');
-    await page.keyboard.type(key, { delay: DELAY_TYPE_KEY });
-    await page.keyboard.press("Enter");
-  }
-  protected async crawler(page: Page): Promise<IResponseListProduct> {
+    await page.goto(`${this.baseUrl}/search?q=${key}`);
     await this.useScroll(page);
-    await page.waitForLoadState("networkidle");
+    await this.useCheck()
+
+
+
+  }
+  protected async crawler(): Promise<IResponseListProduct> {
     const data: IProductInfo[] = [];
     return {
       data,
