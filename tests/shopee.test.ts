@@ -11,4 +11,5 @@ worker.runTask(async (page:any)=>{
   console.log(result.data)
 },{
   cookies: cookies as any,
+  headless:false
 })

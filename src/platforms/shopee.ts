@@ -31,7 +31,7 @@ export default class Shopee extends BaseECom {
             response.headers()["content-type"]?.includes("application/json")
           ) {
             const json = await response.json();
-            this.store["products"] = json.items;
+            if( Array.isArray(json.items)) this.store["products"] = json.items;
             if (response.status() == 200) this.store["prodNew"] = true;
           }
         } catch (error) {

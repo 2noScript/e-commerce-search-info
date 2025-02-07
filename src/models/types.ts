@@ -32,6 +32,7 @@ export interface IProductInfo {
   location?: string;
   favourite?: boolean;
   like?: number;
+  review?:number;
   description?: string;
 }
 
