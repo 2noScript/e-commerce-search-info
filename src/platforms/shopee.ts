@@ -14,12 +14,12 @@ export default class Shopee extends BaseECom {
   protected async retry(retryFunc: () => Promise<void>) {
     let retryCount = 1;
     while (true) {
-      if (retryCount > 2 || this.store["products"].length>0) return;
+      if (retryCount > 2 || this.store["products"]?.length>0) return;
       retryCount++
       await retryFunc();
     }
   }
-  
+
   protected async sendKeyword(page: Page, key: string): Promise<void> {
     page.on("response", async (response) => {
       if (
@@ -50,13 +50,16 @@ export default class Shopee extends BaseECom {
   protected async crawler(): Promise<IResponseListProduct> {
 
     const data: IProductInfo[] = []
-    for (const prod of this.store?.products ?? []) {
+    for (const prod of this.store.products ) {
+      
+      const brand=prod.item_basic.brand
       const title = prod.item_basic.name;
       const price = prod.item_basic.price;
       const originPrice = prod.item_basic.price_before_discount;
       const discount = prod.item_basic.raw_discount;
       const unit = prod.item_basic.currency;
       const star = starFormat(prod.item_basic.item_rating.rating_star ?? 0);
+      const sold=prod.item_basic.historical_sold
       const imageUrlThumbnail = `https://down-vn.img.susercontent.com/file/${prod.item_basic.image}`;
       const location = prod.item_basic.shop_location;
       const like = prod.item_basic.liked_count;
@@ -65,12 +68,14 @@ export default class Shopee extends BaseECom {
       }.${prod.item_basic.itemid}`;
 
       data.push({
+        brand,
         title,
         price,
         originPrice,
         discount,
         unit,
         star,
+        sold,
         imageUrlThumbnail,
         location,
         like,

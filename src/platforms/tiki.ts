@@ -25,7 +25,7 @@ export default class Tiki extends BaseECom {
                 ...this.store["products"],
                 ...json.data,
               ];
-              this.store["prodNew"]=true
+              this.store["prodNew"] = true;
               console.log(this.store["products"].length);
             }
           }
@@ -36,13 +36,39 @@ export default class Tiki extends BaseECom {
     });
     await page.goto(`${this.baseUrl}/search?q=${key}`);
     await this.useScroll(page);
-    await this.useCheck()
-
-
-
+    await this.useCheck();
   }
   protected async crawler(): Promise<IResponseListProduct> {
     const data: IProductInfo[] = [];
+
+    for (const prod of this.store.products) {
+      const brand = prod.brand_name;
+      const title = prod.name;
+      const price = prod.price;
+      const originPrice = prod.original_price;
+      const discount = prod.discount_rate;
+      const unit = "VND";
+      const star = prod.rating_average;
+      const imageUrlThumbnail = prod.thumbnail_url;
+      const sold = prod?.quantity_sold?.value;
+      const location = prod.origin;
+      const detailUrl = `${this.baseUrl}/${prod.url_path}`;
+
+      data.push({
+        brand,
+        title,
+        price,
+        originPrice,
+        discount,
+        unit,
+        star,
+        sold,
+        imageUrlThumbnail,
+        location,
+        detailUrl,
+      });
+    }
+
     return {
       data,
       status: "SUCCESS",

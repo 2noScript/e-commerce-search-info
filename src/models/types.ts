@@ -1,7 +1,7 @@
 type TYPE_LANGUAGE = "en" | "vi";
-type TYPE_lOCALE = "en_EN" | "vi_VN";
+type TYPE_LOCALE = "en_EN" | "vi_VN";
 type Status = "SUCCESS" | "ERROR" | "WITHOUT";
-type Unit="VND"
+type Unit = "VND";
 
 export enum Platforms {
   Lazada = "lazada",
@@ -18,19 +18,21 @@ export interface IResponseListProduct {
 }
 
 export interface IProductInfo {
+  brand: string;
   title: string;
-  price:number,
-  originPrice?:number
-  unit:Unit,
-  star?:number,
-  discount?:number,
-  imageUrlThumbnail:string,
-  imagePathThumbnail?:string,
-  detailUrl:string,
-  location?:string
-  favourite?:boolean,
-  like?:number,
-  description?:string
+  price: number;
+  originPrice?: number;
+  unit: Unit;
+  star?: number;
+  discount?: number;
+  sold?: number;
+  imageUrlThumbnail: string;
+  imagePathThumbnail?: string;
+  detailUrl: string;
+  location?: string;
+  favourite?: boolean;
+  like?: number;
+  description?: string;
 }
 
 export interface ISourceInfo {
@@ -39,6 +41,6 @@ export interface ISourceInfo {
   logo: string;
   icon: string;
   language: TYPE_LANGUAGE[];
-  locale: TYPE_lOCALE;
+  locale: TYPE_LOCALE;
   domain: string;
 }
