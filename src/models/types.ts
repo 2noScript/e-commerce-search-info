@@ -18,7 +18,7 @@ export interface IResponseListProduct {
 }
 
 export interface IProductInfo {
-  brand: string;
+  brand?: string;
   title: string;
   price: number;
   originPrice?: number;
