@@ -13,6 +13,10 @@ class ECommerce {
       [Platforms.Sendo]: PlatformECommerce.Sendo,
       [Platforms.Fptshop]: PlatformECommerce.Fptshop,
       [Platforms.Viettelstore]: PlatformECommerce.Viettelstore,
+      [Platforms.Tokopedia]: PlatformECommerce.Tokopedia,
+      [Platforms.Coupang]: PlatformECommerce.Coupang,
+      [Platforms.Bukalapak]: PlatformECommerce.Bukalapak,
+      [Platforms.Gmarket]: PlatformECommerce.Gmarket,
     };
   }
   build(platform: Platforms) {

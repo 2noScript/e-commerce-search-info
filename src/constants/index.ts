@@ -84,7 +84,7 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
   },
   [Platforms.Gmarket]: {
     key: Platforms.Gmarket,
-    name: "gmarket.co",
+    name: "gmarket",
     language: ["ko"],
     locale: "ko_KR",
     icon: "",
