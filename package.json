@@ -1,31 +1,48 @@
 {
-  "name": "e-commerce-search-info",
-  "version": "0.0.1",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "files": [
-    "lib"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "dev": "nodemon --exec ts-node tests/index.ts",
-    "dev:fptshop": "nodemon --exec ts-node tests/fptshop.test.ts",
-    "dev:lazada": "nodemon --exec ts-node tests/lazada.test.ts",
-    "dev:sendo": "nodemon --exec ts-node tests/sendo.test.ts",
-    "dev:shopee": "nodemon --exec ts-node tests/shopee.test.ts",
-    "dev:tiki": "nodemon --exec ts-node tests/tiki.test.ts",
-    "dev:viettelstore": "nodemon --exec ts-node tests/viettelstore.test.ts",
-    "prepare": "yarn  build"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^22.13.1",
-    "@types/speakingurl": "^13.0.6",
-    "axios": "^1.7.9",
-    "nodemon": "^3.0.3",
-    "playwright": "^1.50.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {}
+    "name": "e-commerce-search-info",
+    "version": "0.0.1",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib"
+    ],
+    "repository": "https://github.com/2noScript/e-commerce-search-info",
+    "scripts": {
+        "build": "tsc",
+        "dev": "nodemon --exec ts-node tests/index.ts",
+        "dev:fptshop": "nodemon --exec ts-node tests/fptshop.test.ts",
+        "dev:lazada": "nodemon --exec ts-node tests/lazada.test.ts",
+        "dev:sendo": "nodemon --exec ts-node tests/sendo.test.ts",
+        "dev:shopee": "nodemon --exec ts-node tests/shopee.test.ts",
+        "dev:tiki": "nodemon --exec ts-node tests/tiki.test.ts",
+        "dev:viettelstore": "nodemon --exec ts-node tests/viettelstore.test.ts",
+        "prepare": "yarn  build"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^22.13.1",
+        "@types/speakingurl": "^13.0.6",
+        "axios": "^1.7.9",
+        "nodemon": "^3.0.3",
+        "playwright": "^1.50.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3"
+    },
+    "dependencies": {},
+    "engines": {
+        "node": ">=14"
+    },
+    "keywords": [
+        "shopee",
+        "lazada",
+        "tiki",
+        "sendo",
+        "fptshop",
+        "viettelstore",
+        "tokopedia",
+        "Bukalapak",
+        "coupang",
+        "gmarket",
+        "search"
+    ]
 }
