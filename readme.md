@@ -1,6 +1,6 @@
-# lib-name
+# e-commerce-search-info
 
-[![npm version](https://badge.fury.io/js/t2-puppeteer-plugin-block-resources.svg)](https://badge.fury.io/js/lib-name)
+[![npm version](https://badge.fury.io/js/e-commerce-search-info.svg)](https://badge.fury.io/js/e-commerce-search-info)
 
 ## Description
 
@@ -18,7 +18,7 @@ or using Yarn:
 
 ### Usage with puppeteer-extra
 
-```js
+```ts
 
 ```
 
