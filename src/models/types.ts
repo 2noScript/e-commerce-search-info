@@ -1,7 +1,7 @@
-type TYPE_LANGUAGE = "en" | "vi";
-type TYPE_LOCALE = "en_EN" | "vi_VN";
+type TYPE_LANGUAGE = "en" | "vi" | "ko" | "zh";
+type TYPE_LOCALE = "en_EN" | "vi_VN" | "id_ID" | "ko_KR" | "zh_CN";
 type Status = "SUCCESS" | "ERROR" | "WITHOUT";
-type Unit = "VND";
+type Unit = "VND" | "RP" | "KRW" | "CNY";
 
 export enum Platforms {
   Lazada = "lazada",
@@ -10,6 +10,10 @@ export enum Platforms {
   Shopee = "shopee",
   Tiki = "tiki",
   Viettelstore = "viettelstore",
+  Tokopedia = "tokopedia",
+  Bukalapak = "bukalapak",
+  Coupang = "coupang",
+  Gmarket = "gmarket.co",
 }
 
 export interface IResponseListProduct {
@@ -32,7 +36,7 @@ export interface IProductInfo {
   location?: string;
   favourite?: boolean;
   like?: number;
-  review?:number;
+  review?: number;
   description?: string;
 }
 

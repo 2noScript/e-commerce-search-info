@@ -55,6 +55,42 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
     logo: "",
     domain: "viettelstore.vn",
   },
+  [Platforms.Tokopedia]: {
+    key: Platforms.Tokopedia,
+    name: "tokopedia",
+    language: ["en"],
+    locale: "id_ID",
+    icon: "",
+    logo: "",
+    domain: "tokopedia.com",
+  },
+  [Platforms.Bukalapak]: {
+    key: Platforms.Bukalapak,
+    name: "bukalapak",
+    language: ["en"],
+    locale: "id_ID",
+    icon: "",
+    logo: "",
+    domain: "bukalapak.com",
+  },
+  [Platforms.Coupang]: {
+    key: Platforms.Coupang,
+    name: "coupang",
+    language: ["ko"],
+    locale: "ko_KR",
+    icon: "",
+    logo: "",
+    domain: "coupang.com",
+  },
+  [Platforms.Gmarket]: {
+    key: Platforms.Gmarket,
+    name: "gmarket.co",
+    language: ["ko"],
+    locale: "ko_KR",
+    icon: "",
+    logo: "",
+    domain: "gmarket.co.kr",
+  },
 };
 
 export const DELAY_TYPE_KEY=100
