@@ -18,10 +18,10 @@ or using Yarn:
 yarn add e-commerce-search-info
 ```
 
-### Usage with browser-worker
+### Usage with t2-browser-worker
 
 ```ts
-import { BrowserWorker } from "browser-worker"
+import { BrowserWorker } from "t2-browser-worker"
 import { ECommerce, Platforms } from "e-commerce-search-info"
 import cookies from "../mock/shopee.vn_06-02-2025.json"
 
@@ -55,3 +55,4 @@ worker.runTask(
 |     | `Bukalapak`    | bukalapak    | en       | id_ID  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/bukalapak.ico" width="32" height="32" />    | bukalapak.com   |
 |     | `Coupang`      | coupang      | ko       | ko_KR  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/coupang.ico" width="32" height="32" />      | coupang.com     |
 |     | `Gmarket`      | gmarket      | ko       | ko_KR  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/gmarket.ico" width="32" height="32" />      | gmarket.co.kr   |
+
