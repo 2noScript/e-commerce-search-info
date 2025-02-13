@@ -43,15 +43,15 @@ worker.runTask(
 
 ### ECommerceInfo Table
 
-|     | Key            | Name         | Language | Locale | Logo                                                                                                                               | Domain          |
-| --- | -------------- | ------------ | -------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| ✅  | `Shopee`       | shopee       | vi       | vi_VN  | <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/icon_favicon_1_96.wI1aMs.png" width="24" height="24" /> | shopee.vn       |
-| ✅  | `Lazada`       | lazada       | vi       | vi_VN  | <img src="https://lzd-img-global.slatic.net/g/tps/tfs/TB1e_.JhHY1gK0jSZTEXXXDQVXa-64-64.png" width="24" height="24" />             | lazada.vn       |
-| ✅  | `Tiki`         | tiki         | vi       | vi_VN  | <img src="https://salt.tikicdn.com/ts/upload/29/ca/02/e39713d1b90405fd0d39b8fac676bb0d.png" width="24" height="24" />              | tiki.vn         |
-| ✅  | `Sendo`        | sendo        | vi       | vi_VN  | <img src="https://media3.scdn.vn/img4/2020/12_17/ESU8qhSA4W2ha9ONanHH.png" width="24" height="24" />                               | sendo.vn        |
-|     | `Fptshop`      | fptshop      | vi       | vi_VN  | <img src="https://fptshop.com.vn/favicon.ico" width="24" height="24" />                                                            | fptshop.com.vn  |
-|     | `Viettelstore` | viettelstore | vi       | vi_VN  | <img src="https://viettelstore.vn/favicon.ico" width="24" height="24" />                                                           | viettelstore.vn |
-|     | `Tokopedia`    | tokopedia    | en       | id_ID  | <img src="https://images.tokopedia.net/assets-tokopedia-lite/prod/icon144.png" width="24" height="24" />                           | tokopedia.com   |
-|     | `Bukalapak`    | bukalapak    | en       | id_ID  | <img src="https://assets.bukalapak.com/sigil/bukalapak-logo-icon.svg" width="24" height="24" />                                    | bukalapak.com   |
-|     | `Coupang`      | coupang      | ko       | ko_KR  | <img src="https://image9.coupangcdn.com/image/coupang/favicon/v2/favicon.ico" width="24" height="24" />                            | coupang.com     |
-|     | `Gmarket`      | gmarket      | ko       | ko_KR  | <img src="https://image.gmarket.co.kr/favicon/gmarket.ico" width="24" height="24" />                                               | gmarket.co.kr   |
+|     | Key            | Name         | Language | Locale | Logo                                                                                                                                      | Domain          |
+| --- | -------------- | ------------ | -------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| ✅  | `Shopee`       | shopee       | vi       | vi_VN  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/shopee.ico" width="32" height="32" />       | shopee.vn       |
+| ✅  | `Lazada`       | lazada       | vi       | vi_VN  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/lazada.ico" width="32" height="32" />       | lazada.vn       |
+| ✅  | `Tiki`         | tiki         | vi       | vi_VN  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/tiki.ico" width="32" height="32" />         | tiki.vn         |
+| ✅  | `Sendo`        | sendo        | vi       | vi_VN  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/sendo.ico" width="32" height="32" />        | sendo.vn        |
+|     | `Fptshop`      | fptshop      | vi       | vi_VN  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/fptshop.ico" width="32" height="32" />      | fptshop.com.vn  |
+|     | `Viettelstore` | viettelstore | vi       | vi_VN  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/viettelstore.ico" width="32" height="32" /> | viettelstore.vn |
+|     | `Tokopedia`    | tokopedia    | en       | id_ID  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/tokopedia.ico" width="32" height="32" />    | tokopedia.com   |
+|     | `Bukalapak`    | bukalapak    | en       | id_ID  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/bukalapak.ico" width="32" height="32" />    | bukalapak.com   |
+|     | `Coupang`      | coupang      | ko       | ko_KR  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/coupang.ico" width="32" height="32" />      | coupang.com     |
+|     | `Gmarket`      | gmarket      | ko       | ko_KR  | <img src="https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/gmarket.ico" width="32" height="32" />      | gmarket.co.kr   |

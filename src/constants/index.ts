@@ -1,13 +1,16 @@
 import { ISourceInfo, Platforms } from "../models/types"
 
+
+const ASSETS_ICON = "https://raw.githubusercontent.com/2noScript/e-commerce-search-info/main/assets/icon/";
+
 export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
     [Platforms.Shopee]: {
         key: Platforms.Shopee,
         name: "shopee",
         language: ["vi"],
         locale: "vi_VN",
-        icon: "https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/icon_favicon_1_96.wI1aMs.png",
-        logo: "https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/icon_favicon_1_96.wI1aMs.png",
+        icon: `${ASSETS_ICON}shopee.ico`,
+        logo: `${ASSETS_ICON}shopee.ico`,
         domain: "shopee.vn",
     },
     [Platforms.Lazada]: {
@@ -15,8 +18,8 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
         name: "lazada",
         language: ["vi"],
         locale: "vi_VN",
-        icon: "https://lzd-img-global.slatic.net/g/tps/tfs/TB1e_.JhHY1gK0jSZTEXXXDQVXa-64-64.png",
-        logo: "https://lzd-img-global.slatic.net/g/tps/tfs/TB1e_.JhHY1gK0jSZTEXXXDQVXa-64-64.png",
+        icon: `${ASSETS_ICON}lazada.ico`,
+        logo: `${ASSETS_ICON}lazada.ico`,
         domain: "lazada.vn",
     },
     [Platforms.Tiki]: {
@@ -24,8 +27,8 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
         name: "tiki",
         language: ["vi"],
         locale: "vi_VN",
-        icon: "https://salt.tikicdn.com/ts/upload/29/ca/02/e39713d1b90405fd0d39b8fac676bb0d.png",
-        logo: "https://salt.tikicdn.com/ts/upload/29/ca/02/e39713d1b90405fd0d39b8fac676bb0d.png",
+        icon: `${ASSETS_ICON}tiki.ico`,
+        logo: `${ASSETS_ICON}tiki.ico`,
         domain: "tiki.vn",
     },
     [Platforms.Sendo]: {
@@ -33,8 +36,8 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
         name: "sendo",
         language: ["vi"],
         locale: "vi_VN",
-        icon: "https://media3.scdn.vn/img4/2020/12_17/ESU8qhSA4W2ha9ONanHH.png",
-        logo: "https://media3.scdn.vn/img4/2020/12_17/ESU8qhSA4W2ha9ONanHH.png",
+        icon: `${ASSETS_ICON}sendo.ico`,
+        logo: `${ASSETS_ICON}sendo.ico`,
         domain: "sendo.vn",
     },
     [Platforms.Fptshop]: {
@@ -42,8 +45,8 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
         name: "fptshop",
         language: ["vi"],
         locale: "vi_VN",
-        icon: "https://fptshop.com.vn/favicon.ico",
-        logo: "https://fptshop.com.vn/favicon.ico",
+        icon: `${ASSETS_ICON}fptshop.ico`,
+        logo: `${ASSETS_ICON}fptshop.ico`,
         domain: "fptshop.com.vn",
     },
     [Platforms.Viettelstore]: {
@@ -51,8 +54,8 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
         name: "viettelstore",
         language: ["vi"],
         locale: "vi_VN",
-        icon: "https://viettelstore.vn/favicon.ico",
-        logo: "https://viettelstore.vn/favicon.ico",
+        icon: `${ASSETS_ICON}viettelstore.ico`,
+        logo: `${ASSETS_ICON}viettelstore.ico`,
         domain: "viettelstore.vn",
     },
     [Platforms.Tokopedia]: {
@@ -60,8 +63,8 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
         name: "tokopedia",
         language: ["en"],
         locale: "id_ID",
-        icon: "https://images.tokopedia.net/assets-tokopedia-lite/prod/icon144.png",
-        logo: "https://images.tokopedia.net/assets-tokopedia-lite/prod/icon144.png",
+        icon: `${ASSETS_ICON}tokopedia.ico`,
+        logo: `${ASSETS_ICON}tokopedia.ico`,
         domain: "tokopedia.com",
     },
     [Platforms.Bukalapak]: {
@@ -69,8 +72,8 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
         name: "bukalapak",
         language: ["en"],
         locale: "id_ID",
-        icon: "https://assets.bukalapak.com/sigil/bukalapak-logo-icon.svg",
-        logo: "https://assets.bukalapak.com/sigil/bukalapak-logo-icon.svg",
+        icon: `${ASSETS_ICON}bukalapak.ico`,
+        logo: `${ASSETS_ICON}bukalapak.ico`,
         domain: "bukalapak.com",
     },
     [Platforms.Coupang]: {
@@ -78,8 +81,8 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
         name: "coupang",
         language: ["ko"],
         locale: "ko_KR",
-        icon: "https://image9.coupangcdn.com/image/coupang/favicon/v2/favicon.ico",
-        logo: "https://image9.coupangcdn.com/image/coupang/favicon/v2/favicon.ico",
+        icon: `${ASSETS_ICON}coupang.ico`,
+        logo: `${ASSETS_ICON}coupang.ico`,
         domain: "coupang.com",
     },
     [Platforms.Gmarket]: {
@@ -87,10 +90,11 @@ export const ECommerceInfo: Record<Platforms, ISourceInfo> = {
         name: "gmarket",
         language: ["ko"],
         locale: "ko_KR",
-        icon: "https://image.gmarket.co.kr/favicon/gmarket.ico",
-        logo: "https://image.gmarket.co.kr/favicon/gmarket.ico",
+        icon: `${ASSETS_ICON}gmarket.ico`,
+        logo: `${ASSETS_ICON}gmarket.ico`,
         domain: "gmarket.co.kr",
     },
-}
+};
+
 
 export const DELAY_TYPE_KEY = 100
