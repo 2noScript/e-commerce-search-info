@@ -24,11 +24,10 @@
         "@types/speakingurl": "^13.0.6",
         "axios": "^1.7.9",
         "nodemon": "^3.0.3",
-        "playwright": "^1.50.1",
+        "t2-browser-worker": "^0.0.6",
         "ts-node": "^10.9.2",
         "typescript": "^5.3.3"
     },
-    "dependencies": {},
     "engines": {
         "node": ">=14"
     },

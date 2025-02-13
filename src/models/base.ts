@@ -1,4 +1,4 @@
-import { Page } from "playwright"
+import { Page} from "t2-browser-worker"
 import { IResponseListProduct } from "../models/types"
 
 export abstract class BaseECom {

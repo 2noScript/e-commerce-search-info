@@ -1,13 +1,11 @@
-import { BrowserWorker } from "browser-worker";
+import { BrowserWorker, Page } from "t2-browser-worker"
 
-import {ECommerce, Platforms} from "../src"
+import { ECommerce, Platforms } from "../src"
 
+const worker = new BrowserWorker()
+const tiki = new ECommerce().build(Platforms.Tiki)
 
-
-const worker = new BrowserWorker();
-const tiki=new ECommerce().build(Platforms.Tiki)
-
-worker.runTask(async (page:any)=>{
-  const result=  await tiki.search(page,"giá đỡ laptop")
-  console.log(result)
+worker.runTask(async (page: any) => {
+    const result = await tiki.search(page, "giá đỡ laptop")
+    console.log(result)
 })

@@ -3,3 +3,4 @@ lib
 ./data.json
 ./test/index.html
 mock/*.json
+browser

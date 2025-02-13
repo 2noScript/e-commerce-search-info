@@ -4,6 +4,8 @@
 
 ## Description
 
+"I want to find a product easily; that's how I do it."
+
 ## Installation
 
 ```bash

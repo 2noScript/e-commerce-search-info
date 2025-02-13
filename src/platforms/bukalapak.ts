@@ -1,4 +1,4 @@
-import { Page } from "playwright"
+import { Page } from "t2-browser-worker"
 import { BaseECom } from "../models/base"
 import { IResponseListProduct } from "../models/types"
 
