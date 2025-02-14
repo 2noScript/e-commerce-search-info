@@ -1,7 +1,7 @@
 import { Page } from "t2-browser-worker"
 import { BaseECom } from "../models/base"
 import { IResponseListProduct, IProductInfo } from "../models/types"
-import { starFormat, sample } from "../utils"
+import { starFormat, sample, saveJsonToFile } from "../utils"
 
 export default class Shopee extends BaseECom {
     private slugStr(text: string) {
@@ -21,6 +21,7 @@ export default class Shopee extends BaseECom {
     }
 
     protected async sendKeyword(page: Page, key: string): Promise<void> {
+        this.store["page"] = 0
         const context = page.context()
         context.addCookies([
             {
@@ -49,30 +50,49 @@ export default class Shopee extends BaseECom {
                     .url()
                     .includes(`${this.baseUrl}/api/v4/search/search_items`)
             ) {
-                console.log("Response Status:", response.status())
                 try {
                     if (
                         response
                             .headers()
                             ["content-type"]?.includes("application/json")
                     ) {
-                        const json = await response.json()
-                        if (Array.isArray(json.items))
-                            this.store["products"] = json.items
-                        if (response.status() == 200)
+                        const { total_count, items } = await response.json()
+                        if (
+                            Array.isArray(items) &&
+                            total_count >= this.store["limit"]
+                        ) {
+                            this.store["products"] = [
+                                ...this.store["products"],
+                                ...items,
+                            ]
+
+                            if (
+                                this.store["products"].length >=
+                                this.store["limit"]
+                            ) {
+                                this.store["prodNew"] = true
+                                this.store["products"] = this.store[
+                                    "products"
+                                ].slice(0, this.store["limit"])
+                            }
+                        } else {
                             this.store["prodNew"] = true
+                        }
                     }
                 } catch (error) {
                     console.error("Error parsing response:", error)
                 }
             }
         })
-        await page.goto(`${this.baseUrl}/search?keyword=${key}`)
-        await page.waitForLoadState("networkidle")
-        await this.useCheck()
-        await this.retry(async () => {
-            await page.goto(`${this.baseUrl}/search?keyword=${key}`)
-        })
+
+        while (true) {
+            await page.goto(
+                `${this.baseUrl}/search?keyword=${key}&page=${this.store["page"]}`
+            )
+            await page.waitForLoadState("networkidle")
+            if (this.store["prodNew"]) break
+            this.store["page"]++
+        }
     }
 
     protected async crawler(): Promise<IResponseListProduct> {

@@ -3,10 +3,11 @@ import { IResponseListProduct } from "../models/types"
 
 export abstract class BaseECom {
     protected baseUrl: string
-    protected LIMIT_ITEMS: number = 60
+    protected LIMIT_ITEMS: number = 30
     protected store: Record<string, any> = {
         products: [],
         prodNew: false,
+        limit:this.LIMIT_ITEMS
     }
 
     constructor(domain: string) {
@@ -41,12 +42,24 @@ export abstract class BaseECom {
         }
     }
 
+
+    protected async pageResApi(page: Page, url: string) {
+        const response = await page.context().request.fetch(url, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        return response.json(); 
+    }
+
     protected abstract sendKeyword(page: Page, key: string): Promise<void>
     protected abstract crawler(): Promise<IResponseListProduct>
 
-    async search(page: Page, key: string): Promise<IResponseListProduct> {
+    async search(page: Page, key: string,limit?:number): Promise<IResponseListProduct> {
         this.store.products = []
         this.store.prodNew = false
+        this.store.limit=limit??this.LIMIT_ITEMS
 
         await this.sendKeyword(page, key)
         const result = await this.crawler()
