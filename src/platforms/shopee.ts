@@ -1,7 +1,7 @@
 import { Page } from "t2-browser-worker"
 import { BaseECom } from "../models/base"
 import { IResponseListProduct, IProductInfo } from "../models/types"
-import { starFormat } from "../utils"
+import { starFormat, sample } from "../utils"
 
 export default class Shopee extends BaseECom {
     private slugStr(text: string) {
@@ -21,6 +21,28 @@ export default class Shopee extends BaseECom {
     }
 
     protected async sendKeyword(page: Page, key: string): Promise<void> {
+        const context = page.context()
+        context.addCookies([
+            {
+                domain: ".shopee.vn",
+                expires: 3474476375,
+                httpOnly: false,
+                name: "SPC_F",
+                path: "/",
+                sameSite: "None",
+                secure: true,
+                value: sample([
+                    "vHXk5Aou1PF5zouF2UUyUtGwdzqmd1lh",
+                    "itRbp17APW3LaRbHAJIE9nffrTkEB13L",
+                    "URaX45AYBFicG7H188xyHIDiRJRiQW7V",
+                    "TdxdUDlvl1GOzNl4ge72Tm69EdieZkij",
+                    "zrSG3E44N9JMpTCjLuHAvzx5TYZJ0eeH",
+                    "cvxQJJC1OlNcNv6kMCdG6VHBE6oyWgJd",
+                    "rXHgq4Or7N33LYJOJcazoHatSj2U1615",
+                    "0AGCO5aoO0EcbNIOFVcAgYvfrSS4JTr1",
+                ]),
+            },
+        ])
         page.on("response", async response => {
             if (
                 response

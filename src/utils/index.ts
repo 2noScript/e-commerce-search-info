@@ -10,3 +10,8 @@ export function starFormat(num:number) {
     return Math.round(num * 10) / 10;
 }
   
+
+export const sample = (models: Array<any>) => {
+  const index = Math.floor(Math.random() * models.length);
+  return models[index];
+};

@@ -47,7 +47,7 @@
   resolved "https://registry.npmjs.org/@tsconfig/node16/-/node16-1.0.4.tgz"
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
 
-"@types/node@*", "@types/node@^22.13.1":
+"@types/node@^22.13.1":
   version "22.13.2"
   resolved "https://registry.npmjs.org/@types/node/-/node-22.13.2.tgz"
   integrity sha512-Z+r8y3XL9ZpI2EY52YYygAFmo2/oWfNSj4BCpAXE2McAexDk8VcnBMGC9Djn9gTKt4d2T/hhXqmPzo4hfIXtTg==
@@ -193,15 +193,15 @@ form-data@^4.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
-fsevents@~2.3.2:
-  version "2.3.3"
-  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
-  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
-
 fsevents@2.3.2:
   version "2.3.2"
   resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+
+fsevents@~2.3.2:
+  version "2.3.3"
+  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
+  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 glob-parent@~5.1.2:
   version "5.1.2"
@@ -349,10 +349,10 @@ supports-color@^5.5.0:
   dependencies:
     has-flag "^3.0.0"
 
-t2-browser-worker@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/t2-browser-worker/-/t2-browser-worker-0.0.6.tgz"
-  integrity sha512-lDd4fQvRH0EgW1kdPLN/G5XlLwcaUIb+Ft+nzKkTRlcY6Xt4h3ai35oCoUMfUXMXkxQXX08hRnqgc360hWzq5g==
+t2-browser-worker@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/t2-browser-worker/-/t2-browser-worker-0.0.7.tgz#4b113c3f48192f1b8ff314c614faafb736785e98"
+  integrity sha512-vh5iwmkupd0PWtzomDLaGIEwEMV56JORrtuvLMExO1/q7yTW2NCdh81QCHd4cvAkuh//24WmOrnyzoszFEQl5g==
   dependencies:
     axios "^1.7.9"
     playwright "^1.50.1"
@@ -389,7 +389,7 @@ ts-node@^10.9.2:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
-typescript@^5.3.3, typescript@>=2.7:
+typescript@^5.3.3:
   version "5.7.3"
   resolved "https://registry.npmjs.org/typescript/-/typescript-5.7.3.tgz"
   integrity sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==
